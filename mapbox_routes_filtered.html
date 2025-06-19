@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9697f1ed7d301ed43029d8be5a2f83d7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9697f1ed7d301ed43029d8be5a2f83d7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9697f1ed7d301ed43029d8be5a2f83d7 = L.map(
+                "map_9697f1ed7d301ed43029d8be5a2f83d7",
+                {
+                    center: [37.5665, 126.978],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bb602159081ec3b7eaeba376c3d41982 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bb602159081ec3b7eaeba376c3d41982.addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var poly_line_d2679fe655c96982f1844bc0b371fcd9 = L.polyline(
+                [[37.547261, 126.862192], [37.547809, 126.862363], [37.547811, 126.8631], [37.547815, 126.863236], [37.547793, 126.863331], [37.547749, 126.863543]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var marker_051793861720b483f7dca1059146cc69 = L.marker(
+                [37.5478543128106, 126.863577731236],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_f997b1fc1f1a3731daece1637bf3c780 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd0f7c737b82c4f3a8bf3041b419d5c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfa5d1e1f87bed1550f37248a6ded3d0 = $(`<div id="html_dfa5d1e1f87bed1550f37248a6ded3d0" style="width: 100.0%; height: 100.0%;">매물 서울특별시 양천구 목동 614-8</div>`)[0];
+                popup_cd0f7c737b82c4f3a8bf3041b419d5c7.setContent(html_dfa5d1e1f87bed1550f37248a6ded3d0);
+            
+        
+
+        marker_051793861720b483f7dca1059146cc69.bindPopup(popup_cd0f7c737b82c4f3a8bf3041b419d5c7)
+        ;
+
+        
+    
+    
+                marker_051793861720b483f7dca1059146cc69.setIcon(icon_f997b1fc1f1a3731daece1637bf3c780);
+            
+    
+            var marker_3e0b6c6eb72f4881e9c98fe5c9ee5974 = L.marker(
+                [37.54728726, 126.8620589],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_6f973ad61e4a3d60ad7fc55c96b0cb23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "school",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42d4c96fdb1bad847a516a6fc921e4ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2782c8757c590e2841cfe92ecb3c3050 = $(`<div id="html_2782c8757c590e2841cfe92ecb3c3050" style="width: 100.0%; height: 100.0%;">학교: 영일고등학교</div>`)[0];
+                popup_42d4c96fdb1bad847a516a6fc921e4ad.setContent(html_2782c8757c590e2841cfe92ecb3c3050);
+            
+        
+
+        marker_3e0b6c6eb72f4881e9c98fe5c9ee5974.bindPopup(popup_42d4c96fdb1bad847a516a6fc921e4ad)
+        ;
+
+        
+    
+    
+                marker_3e0b6c6eb72f4881e9c98fe5c9ee5974.setIcon(icon_6f973ad61e4a3d60ad7fc55c96b0cb23);
+            
+    
+            var poly_line_c6874b7bbbe623164bf51a6e3fb3b020 = L.polyline(
+                [[37.547261, 126.862192], [37.547809, 126.862363], [37.547811, 126.8631], [37.547815, 126.863236], [37.547793, 126.863331], [37.547749, 126.863543]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var marker_0e9f8bc8dac5fbbc1c9eda186fed9a98 = L.marker(
+                [37.5478543128106, 126.863577731236],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_cf8ee0c29b353c54c522acd3edcf70f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3539d3d32ae7dc3e899f17a93c7e066 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_215c07d890698fcf37968a9f9e9b215d = $(`<div id="html_215c07d890698fcf37968a9f9e9b215d" style="width: 100.0%; height: 100.0%;">매물 서울특별시 양천구 목동 614-8</div>`)[0];
+                popup_d3539d3d32ae7dc3e899f17a93c7e066.setContent(html_215c07d890698fcf37968a9f9e9b215d);
+            
+        
+
+        marker_0e9f8bc8dac5fbbc1c9eda186fed9a98.bindPopup(popup_d3539d3d32ae7dc3e899f17a93c7e066)
+        ;
+
+        
+    
+    
+                marker_0e9f8bc8dac5fbbc1c9eda186fed9a98.setIcon(icon_cf8ee0c29b353c54c522acd3edcf70f3);
+            
+    
+            var marker_a6bf7bfa04056616ac54fab526cce5af = L.marker(
+                [37.54728726, 126.8620589],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_4901396148bfd596f5d5ccbd9d049844 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "school",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f89ff4d39a58ab6333033514205dc6e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10b76272f12921c541a8fe31dc884156 = $(`<div id="html_10b76272f12921c541a8fe31dc884156" style="width: 100.0%; height: 100.0%;">학교: 영일고등학교</div>`)[0];
+                popup_f89ff4d39a58ab6333033514205dc6e1.setContent(html_10b76272f12921c541a8fe31dc884156);
+            
+        
+
+        marker_a6bf7bfa04056616ac54fab526cce5af.bindPopup(popup_f89ff4d39a58ab6333033514205dc6e1)
+        ;
+
+        
+    
+    
+                marker_a6bf7bfa04056616ac54fab526cce5af.setIcon(icon_4901396148bfd596f5d5ccbd9d049844);
+            
+    
+            var poly_line_52886c3a778b277e018c6990f7b89e34 = L.polyline(
+                [[37.547261, 126.862192], [37.547809, 126.862363], [37.547811, 126.8631], [37.547815, 126.863236], [37.547793, 126.863331], [37.547749, 126.863543]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var marker_3fb6100aa6e9d4a6ce1383847ebe16f8 = L.marker(
+                [37.5478543128106, 126.863577731236],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_7c4113d49fbca023cec8f7d6a4bd8e5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_280390baf6a727569cdd7028fcb9df8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfeacf50d35703899516a299f658c412 = $(`<div id="html_dfeacf50d35703899516a299f658c412" style="width: 100.0%; height: 100.0%;">매물 서울특별시 양천구 목동 614-8</div>`)[0];
+                popup_280390baf6a727569cdd7028fcb9df8c.setContent(html_dfeacf50d35703899516a299f658c412);
+            
+        
+
+        marker_3fb6100aa6e9d4a6ce1383847ebe16f8.bindPopup(popup_280390baf6a727569cdd7028fcb9df8c)
+        ;
+
+        
+    
+    
+                marker_3fb6100aa6e9d4a6ce1383847ebe16f8.setIcon(icon_7c4113d49fbca023cec8f7d6a4bd8e5b);
+            
+    
+            var marker_764cb4301f17520f6ddcdcdd001b5712 = L.marker(
+                [37.54728726, 126.8620589],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_85d04a96044a60cdb0881b09563d1e5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "school",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f6bb33329310af9d18d6717f78ec907 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a57a79c5fd945f93f506b55046a32de9 = $(`<div id="html_a57a79c5fd945f93f506b55046a32de9" style="width: 100.0%; height: 100.0%;">학교: 영일고등학교</div>`)[0];
+                popup_4f6bb33329310af9d18d6717f78ec907.setContent(html_a57a79c5fd945f93f506b55046a32de9);
+            
+        
+
+        marker_764cb4301f17520f6ddcdcdd001b5712.bindPopup(popup_4f6bb33329310af9d18d6717f78ec907)
+        ;
+
+        
+    
+    
+                marker_764cb4301f17520f6ddcdcdd001b5712.setIcon(icon_85d04a96044a60cdb0881b09563d1e5a);
+            
+    
+            var poly_line_fe75ae00f0b3e31ad0107f45ea662093 = L.polyline(
+                [[37.547261, 126.862192], [37.547809, 126.862363], [37.547811, 126.8631], [37.547815, 126.863236], [37.547793, 126.863331], [37.547749, 126.863543]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var marker_2dd986b7d87bbe1ef98d509f7b2c6498 = L.marker(
+                [37.5478543128106, 126.863577731236],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_4e7a4d859d9cbbe94d73423ffc659f1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_694b44ea9a108789fbf60ff41d36b16a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a75f0176ff6e9568a50fb15447ef8fa = $(`<div id="html_9a75f0176ff6e9568a50fb15447ef8fa" style="width: 100.0%; height: 100.0%;">매물 서울특별시 양천구 목동 614-8</div>`)[0];
+                popup_694b44ea9a108789fbf60ff41d36b16a.setContent(html_9a75f0176ff6e9568a50fb15447ef8fa);
+            
+        
+
+        marker_2dd986b7d87bbe1ef98d509f7b2c6498.bindPopup(popup_694b44ea9a108789fbf60ff41d36b16a)
+        ;
+
+        
+    
+    
+                marker_2dd986b7d87bbe1ef98d509f7b2c6498.setIcon(icon_4e7a4d859d9cbbe94d73423ffc659f1e);
+            
+    
+            var marker_093989ba5825ae01367558972f9b2ec2 = L.marker(
+                [37.54728726, 126.8620589],
+                {
+}
+            ).addTo(map_9697f1ed7d301ed43029d8be5a2f83d7);
+        
+    
+            var icon_8434dcde0645a0a6c139bfc38fb7f0c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "school",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d43230681e1060ff13e0072330e5e43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90081cda72eef849e06535a13e2492da = $(`<div id="html_90081cda72eef849e06535a13e2492da" style="width: 100.0%; height: 100.0%;">학교: 영일고등학교</div>`)[0];
+                popup_0d43230681e1060ff13e0072330e5e43.setContent(html_90081cda72eef849e06535a13e2492da);
+            
+        
+
+        marker_093989ba5825ae01367558972f9b2ec2.bindPopup(popup_0d43230681e1060ff13e0072330e5e43)
+        ;
+
+        
+    
+    
+                marker_093989ba5825ae01367558972f9b2ec2.setIcon(icon_8434dcde0645a0a6c139bfc38fb7f0c7);
+            
+</script>
+</html>
