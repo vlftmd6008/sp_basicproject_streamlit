@@ -94,24 +94,73 @@ def load_real_estate_data(years=range(2018, 2025)):
         return real_estate_df
     else:
         return pd.DataFrame(columns=COLUMN_NAMES)
+    
+real_estate = load_real_estate_data()
 
-# Streamlit 앱 시작
-def main():
-    st.title("부동산 데이터 분석")
+# 공공데이터 매물 주소 구하기
+real_estate['MNO'] = real_estate['MNO'].str.lstrip('0')
+real_estate['SNO'] = real_estate['SNO'].str.lstrip('0')
 
-    real_estate = load_real_estate_data()
+def address(x):
+    if pd.notna(x['MNO']) and x['MNO'] != '':
+        if pd.notna(x['SNO']) and x['SNO'] != '':
+            return '서울특별시' + ' ' + x['CGG_NM'] + ' ' + x['STDG_NM'] + ' ' + x['MNO'] + '-' + x['SNO']
+        else:
+            return '서울특별시' + ' ' + x['CGG_NM'] + ' ' + x['STDG_NM'] + ' ' + x['MNO']
+    else:
+        return '서울특별시' + ' ' + x['CGG_NM'] + ' ' + x['STDG_NM']
 
-    st.write("데이터 샘플")
-    st.dataframe(real_estate.head())
+real_estate['address'] = real_estate.apply(address, axis=1)
+# 취소일이 지정된 매물 제외하기
+real_estate = real_estate[real_estate['RTRCN_DAY'].isnull()]
 
-    # 추가 필터링, 분석 UI 및 로직을 여기 추가 가능
+## 방개수와 신축여부 구하기
+real_estate = real_estate[['CGG_NM','STDG_NM','MNO','SNO','BLDG_NM','ARCH_AREA','ARCH_YR','THING_AMT','FLR','BLDG_USG','address']]
+def count_room(x):
+  if x<=30:
+    return '1개'
+  elif x<=70:
+    return '2개'
+  elif x<=100:
+    return '3개'
+  else :
+    return '4개'
 
-if __name__ == "__main__":
-    main()
+real_estate['방개수']=real_estate.apply(lambda x:count_room(x['ARCH_AREA']), axis=1)
+real_estate.head()
 
+def standard(x):
+  list_i=[]
+  for i in range(2019, 2025):
+    i = str(i)
+    list_i.append(i)
+  if str(x) in (list_i):
+    return '신축'
+  else :
+    return '구축'
 
+real_estate['신축여부']=real_estate.apply(lambda x:standard(x['ARCH_YR']), axis=1)
 
+# 1. 고객이 원하는 기준으로 가격, 방 개수, 건물종류, 신축여부로 필터링하기
 
+from IPython.display import display
+def filter_by_price(df):
+  filtered = df[df['THING_AMT'] < y]
+  return filtered
+def filter_by_rooms(df):
+  filtered = df[df['방개수'] == rooms]
+  return filtered
+def filter_by_usg(df):
+  filtered = df[df['BLDG_USG'] == usg]
+  return filtered
+def filter_by_new_old(df):
+  filtered = df[df['신축여부'] == new_old]
+  return filtered
+df_price = filter_by_price(real_estate)
+df_rooms = filter_by_rooms(df_price)
+df_usg = filter_by_usg(df_rooms)
+df_final = filter_by_new_old(df_usg)
 
-if __name__ == "__main__":
-    st.write("다음은 선택하신 기준에 맞는 매물들을 필터링한 결과입니다.")
+st.write("다음은 선택하신 기준에 맞는 매물들을 필터링한 결과입니다.")
+st.write("데이터 샘플")
+st.dataframe(df_final.head(20))
