@@ -146,7 +146,7 @@ def filter_by_price(df, y):
   return df[df['THING_AMT'] < y1]
  
 def filter_by_rooms(df, rooms):
-  room_str = f"{room}개"
+  room_str = f"{rooms}개"
   return df[df['방개수'] == room_str]
 
 def filter_by_usg(df):
