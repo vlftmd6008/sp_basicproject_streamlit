@@ -149,7 +149,7 @@ def filter_by_rooms(df, rooms):
   room_str = f"{rooms}개"
   return df[df['방개수'] == room_str]
 
-def filter_by_usg(df):
+def filter_by_usg(df, usg):
   return df[df['BLDG_USG'] == usg]
   
 def filter_by_new_old(df, new_old):
