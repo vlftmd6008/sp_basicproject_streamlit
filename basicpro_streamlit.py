@@ -127,7 +127,6 @@ def count_room(x):
     return '4개'
 
 real_estate['방개수']=real_estate.apply(lambda x:count_room(x['ARCH_AREA']), axis=1)
-real_estate.head()
 
 def standard(x):
   list_i=[]
@@ -142,24 +141,24 @@ def standard(x):
 real_estate['신축여부']=real_estate.apply(lambda x:standard(x['ARCH_YR']), axis=1)
 
 # 1. 고객이 원하는 기준으로 가격, 방 개수, 건물종류, 신축여부로 필터링하기
+def filter_by_price(df, y):
+  y1 = y/10000
+  return df[df['THING_AMT'] < y1]
+ 
+def filter_by_rooms(df, rooms):
+  room_str = f"{room}개"
+  return df[df['방개수'] == room_str]
 
-from IPython.display import display
-def filter_by_price(df):
-  filtered = df[df['THING_AMT'] < y]
-  return filtered
-def filter_by_rooms(df):
-  filtered = df[df['방개수'] == rooms]
-  return filtered
 def filter_by_usg(df):
-  filtered = df[df['BLDG_USG'] == usg]
-  return filtered
-def filter_by_new_old(df):
-  filtered = df[df['신축여부'] == new_old]
-  return filtered
-df_price = filter_by_price(real_estate)
-df_rooms = filter_by_rooms(df_price)
-df_usg = filter_by_usg(df_rooms)
-df_final = filter_by_new_old(df_usg)
+  return df[df['BLDG_USG'] == usg]
+  
+def filter_by_new_old(df, new_old):
+  return df[df['신축여부'] == new_old]
+  
+df_price = filter_by_price(real_estate, y)
+df_rooms = filter_by_rooms(df_price, rooms)
+df_usg = filter_by_usg(df_rooms, usg)
+df_final = filter_by_new_old(df_usg, new_old)
 
 st.write("다음은 선택하신 기준에 맞는 매물들을 필터링한 결과입니다.")
 st.write("데이터 샘플")
