@@ -29,12 +29,12 @@ st.write("""#### 🏠 방 개수 구하기_건축 면적(컬럼명: ARCH_AREA) �
 - 그 외 **→** 구축""")
 
 st.write(f"이제 {name}님이 원하시는 매물 가격, 방 개수, 건물 종류, 신축 여부를 선택해주세요.")
-y = st.number_input("💰예산을 숫자로 선택해주세요 (예: 400000000)", value=400000000, step = 100000000)
-rooms = st.number_input("🔢방 개수를 숫자로 선택해주세요 (예: 2, 3)", value=3)
-usg = st.selectbox("🏘️건물 종류를 선택해주세요",
+y = st.number_input("💰 예산을 숫자로 선택해주세요 (예: 400000000)", value=400000000, step = 100000000)
+rooms = st.number_input("🔢 방 개수를 숫자로 선택해주세요 (예: 2, 3)", value=3)
+usg = st.selectbox("🏘️ 건물 종류를 선택해주세요",
     ['아파트', '연립다세대', '단독다가구', '오피스텔'],
     index=0)
-new_old = st.selectbox("🆕신축 여부를 선택해주세요",
+new_old = st.selectbox("🆕 신축 여부를 선택해주세요",
     ['신축', '구축'],
     index=0)
 
@@ -44,7 +44,7 @@ real_estate = pd.read_csv("real_estate.csv",encoding='utf-8-sig')
 def filter_by_price(df):
   return df[df['THING_AMT'] < y/10000]
 def filter_by_rooms(df):
-  return df[df['방개수'] == rooms+"개"]
+  return df[df['방개수'] == f"{rooms}개"]
 def filter_by_usg(df):
   return df[df['BLDG_USG'] == usg]
 def filter_by_new_old(df):
