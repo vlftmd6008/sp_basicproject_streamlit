@@ -39,7 +39,7 @@ new_old = st.selectbox("🆕신축 여부를 선택해주세요",
     index=0)
 
 import pandas as pd 
-real_estate = pd.read_csv("real_estate.csv",encoding='euc-kr')
+real_estate = pd.read_csv("real_estate.csv",encoding='utf-8-sig')
 
 def filter_by_price(df):
   return df[df['THING_AMT'] < y/10000]
