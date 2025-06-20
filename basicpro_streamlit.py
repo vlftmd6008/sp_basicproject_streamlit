@@ -37,27 +37,3 @@ usg = st.selectbox("🏘️건물 종류를 선택해주세요",
 new_old = st.selectbox("🆕신축 여부를 선택해주세요",
     ['신축', '구축'],
     index=0)
-
-# 1. 고객이 원하는 기준으로 가격, 방 개수, 건물종류, 신축여부로 필터링하기
-def filter_by_price(df, y):
-  y1 = y/10000
-  return df[df['THING_AMT'] < y1]
- 
-def filter_by_rooms(df, rooms):
-  room_str = f"{rooms}개"
-  return df[df['방개수'] == room_str]
-
-def filter_by_usg(df, usg):
-  return df[df['BLDG_USG'] == usg]
-  
-def filter_by_new_old(df, new_old):
-  return df[df['신축여부'] == new_old]
-  
-df_price = filter_by_price(real_estate, y)
-df_rooms = filter_by_rooms(df_price, rooms)
-df_usg = filter_by_usg(df_rooms, usg)
-df_final = filter_by_new_old(df_usg, new_old)
-
-st.write("다음은 선택하신 기준에 맞는 매물들을 필터링한 결과입니다.")
-st.write("데이터 샘플")
-st.dataframe(df_final.head(20))
