@@ -37,3 +37,24 @@ usg = st.selectbox("🏘️건물 종류를 선택해주세요",
 new_old = st.selectbox("🆕신축 여부를 선택해주세요",
     ['신축', '구축'],
     index=0)
+
+import pandas as pd 
+real_estate = pd.read_csv("real_estate.csv",encoding='euc-kr')
+
+def filter_by_price(df):
+  return df[df['THING_AMT'] < y/10000]
+def filter_by_rooms(df):
+  return df[df['방개수'] == rooms+"개"]
+def filter_by_usg(df):
+  return df[df['BLDG_USG'] == usg]
+def filter_by_new_old(df):
+  return df[df['신축여부'] == new_old]
+
+df_price = filter_by_price(real_estate)
+df_rooms = filter_by_rooms(df_price)
+df_usg = filter_by_usg(df_rooms)
+df_final = filter_by_new_old(df_usg)
+
+st.write("📊 필터링된 매물 데이터:")
+if st.button("📋 결과 보기"):
+    st.dataframe(df_final)
